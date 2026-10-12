@@ -39,4 +39,11 @@ class CarWashStation:
         return round(income, 1)
 
 
+    def rate_service(self, new_rating: int) -> None:
 
+        new_average_rating = (
+            self.average_rating * self.count_of_rating + new_rating
+        ) / (self.count_of_rating + 1)
+
+        self.average_rating = round(new_average_rating, 1)
+        self.count_of_rating += 1
